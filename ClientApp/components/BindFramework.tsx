@@ -12,10 +12,9 @@ interface BindingProperties {
 export class BindComponent extends React.Component<BindingProperties, BindComponentState>{
 
   render(){
-    return(     
+    return(  
       
-
- <div  data-grid="col-12">
+<div  data-grid="col-12" className="data-gridboarder">
      <div data-grid="col-1">{this.props.member.ISOControl}</div>
      <div data-grid="col-1">{this.props.member.MSControl}  </div>
      <div data-grid="col-2"> {this.props.member.NecessaryCustomerAction}  </div>
@@ -41,7 +40,7 @@ export class BindComponent extends React.Component<BindingProperties, BindCompon
        </div>
        <div data-grid="col-1"> {this.props.member.ImplementationDate}</div>
        <div data-grid="col-1"> {this.props.member.TestResult}</div>
-   </div>     
+   </div>  
       ); 
     }
   }
