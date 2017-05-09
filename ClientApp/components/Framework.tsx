@@ -31,12 +31,13 @@ export class MarkMSGrid extends React.Component<Props, State> {
     return (     
       <div>
         <div >        
-          <div className='ms-Grid ms-Grid--wide'>            
+             <section data-grid="container"> 
              {  
                this.state.members.map((member : FrameworkMarkupDetails) =>
                   <BindComponent key={member.Id} member= {member} onChange={this.onChange}/> )
              }
-          </div>
+             </section>
+         
         </div>
       </div>
     );

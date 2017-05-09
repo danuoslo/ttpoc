@@ -63,4 +63,8 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
+    .dropdownGrid {
+    height: 2em;
+    width: 10em;
+}
 }
