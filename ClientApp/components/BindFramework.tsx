@@ -31,10 +31,11 @@ export class BindComponent extends React.Component<BindingProperties, BindCompon
                   </div>
                   <div className='ms-Grid-col ms-u-sm12 ms-u-lg1 ms-u-lg1'>
 
-
-                  {
-                    this.props.member.AssignedTo
-                  }
+                  <button className="c-button" aria-describedby="topFlyoutExample">{ this.props.member.AssignedTo } </button>
+                  <div className="c-flyout" id="topFlyoutExample" role="tooltip" data-js-flyout-placement="top" data-js-flyout-dismissible="true" aria-hidden="true">
+                      <button>Reassing Task</button>
+                      <button>Unassign Task</button>
+                  </div>
                   </div>
                   <div className='ms-Grid-col ms-u-sm12 ms-u-lg1 ms-u-lg1'>
                   </div>

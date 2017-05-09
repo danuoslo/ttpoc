@@ -8,12 +8,21 @@ interface AssignTaskState{
 
 }
 
-export class AssignTaskComponent extends React.Component<void, void>
+export class AssignTaskComponent extends React.Component<AssignTaskProps, AssignTaskState>
 {
     render()
     {
         return (
-            <div>Test</div>
+            <div>
+                <h2>Reasign Task</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         );
     }
 }
