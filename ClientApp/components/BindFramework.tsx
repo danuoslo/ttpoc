@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {FrameworkMarkupDetails} from '../model/frameworkDetails';
 
-export interface BindComponentState {  
+interface BindComponentState {  
 }
 
-export interface BindingProperties {
+interface BindingProperties {
     member: FrameworkMarkupDetails;
     onChange:Function;
 }
@@ -47,8 +47,6 @@ export class BindComponent extends React.Component<BindingProperties, BindCompon
                     {this.props.member.TestResult}
                   </div>
         </div>
-    ); 
+      ); 
+    }
   }
-}
-
-
