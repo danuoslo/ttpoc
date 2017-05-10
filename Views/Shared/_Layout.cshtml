@@ -6,16 +6,15 @@
         <title>@ViewData["Title"] - poc</title>
         <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/dist/site.css" asp-append-version="true" />
-        <link rel="stylesheet" href="https://assets.onestore.ms/cdnfiles/external/mwf/long/v1/v1.4.0/css/mwf-west-european-default.min.css" />
-        <script src="https://assets.onestore.ms/cdnfiles/external/mwf/short/v1/latest/scripts/mwf-auto-init-main.var.min.js" ></script>
-        <script src="https://assets.onestore.ms/cdnfiles/external/mwf/long/v1/v1.21.1/scripts/uhf-main.var.min.js" ></script>
-
-        
+        <link rel="stylesheet" href="https://assets.onestore.ms/cdnfiles/external/mwf/long/v1/v1.4.0/css/mwf-west-european-default.min.css" />        
     </head>
     <body>
         @RenderBody()
 
-        <script src="~/dist/vendor.js" asp-append-version="true"></script>
+        <script src="~/dist/vendor.js" asp-append-version="true"></script>        
         @RenderSection("scripts", required: false)
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+        <script src="https://assets.onestore.ms/cdnfiles/external/mwf/short/v1/latest/scripts/mwf-auto-init-main.var.js" ></script>
+        <script src="https://assets.onestore.ms/cdnfiles/external/mwf/long/v1/v1.21.1/scripts/uhf-main.var.js" ></script>
     </body>
 </html>
