@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {FrameworkMarkupDetails} from '../model/frameworkDetails';
+import {Datepicker} from './datepicker';
 
 interface BindComponentState {  
 }
@@ -8,6 +9,7 @@ interface BindingProperties {
     member: FrameworkMarkupDetails;
     onChange:Function;
 }
+
 
 export class BindComponent extends React.Component<BindingProperties, BindComponentState>{
 
@@ -30,7 +32,7 @@ export class BindComponent extends React.Component<BindingProperties, BindCompon
         <textarea id="default-textarea-5" className="f-no-resize f-scroll" name="textarea-default" defaultValue={this.props.member.TestPlanFindingNotes}>
         </textarea>
       </div>               
-        <div data-grid="col-1">
+        <div data-grid="col-1" >
            <select id="border" className="dropdownGrid">
              <option>Implementation</option>    
              <option>AlternativeImplementation</option> 
@@ -38,7 +40,9 @@ export class BindComponent extends React.Component<BindingProperties, BindCompon
              <option>Not in scope</option>            
            </select>
        </div>
-       <div data-grid="col-1"> {this.props.member.ImplementationDate}</div>
+       <div data-grid="col-1">  
+         <Datepicker />
+        </div>
        <div data-grid="col-1"> {this.props.member.TestResult}</div>
    </div>  
       ); 
