@@ -13,6 +13,9 @@ export default <Route component={ Layout }>
     <Route path='/fetchdata' components={{ body: FetchData }}>     
         <Route path='(:startDateIndex)' /> { /* Optional route segment that does not affect NavMenu highlighting */ }
     </Route>
+
+    <Route path='/ActionItems' components={{ body: Home }} />
+    <Route path='/ServiceCompliance' components={{ body: Home }} />
 </Route>;
 
 // Enable Hot Module Replacement (HMR)
