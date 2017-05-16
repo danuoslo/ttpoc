@@ -37,6 +37,9 @@ export class NavMenu extends React.Component<any, void> {
                                 <span className='glyphicon glyphicon-th-list'></span> Framwork data
                             </Link>
                         </li>
+                        <li>
+                            <a href="http://localhost:5000/actionItems">Other page</a>
+                        </li>
                     </ul>
                 </div>
             </div>

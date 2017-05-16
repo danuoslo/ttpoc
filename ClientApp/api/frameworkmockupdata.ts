@@ -1,4 +1,4 @@
-import {FrameworkMarkupDetails} from '../model/frameworkDetails';
+import {FrameworkMarkupDetails} from '../model/FrameworkMarkupDetails';
 import {Status} from '../model/statusdropdown'
 
 let	FrameWorkMockupData : FrameworkMarkupDetails[] =

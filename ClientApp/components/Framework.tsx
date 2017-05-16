@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {FrameworkMarkupDetails} from '../model/frameworkDetails';
+import {FrameworkMarkupDetails} from '../model/FrameworkMarkupDetails';
 import {frameworkAPI} from '../api/frameworkapi';
 import {BindComponent} from './BindFramework';
 

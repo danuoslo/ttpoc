@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {FrameworkMarkupDetails} from '../model/frameworkDetails';
+import {FrameworkMarkupDetails} from '../model/FrameworkMarkupDetails';
 import {Datepicker} from './datepicker';
 
 interface BindComponentState {  

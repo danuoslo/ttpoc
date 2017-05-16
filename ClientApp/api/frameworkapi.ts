@@ -2,7 +2,7 @@ import {LocalizedValue} from '../model/LocalizedValue';
 import FrameWorkMockData from './frameworkmockdata';
 import {FrameworkDetail} from '../model/FrameworkDetail';
 import FrameworkDetailData from '../api/frameworkDetailMockData';
-import {FrameworkMarkupDetails} from '../model/frameworkDetails';
+import {FrameworkMarkupDetails} from '../model/FrameworkMarkupDetails';
 import FrameWorkMockupData from '../Api/frameworkmockupdata';
 
 class FrameworkAPI {
