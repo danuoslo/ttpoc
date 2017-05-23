@@ -38,7 +38,14 @@ export class NavMenu extends React.Component<any, void> {
                             </Link>
                         </li>
                         <li>
-                            <a href="http://localhost:5000/actionItems">Other page</a>
+                            <Link to={ '/actionItems' } activeClassName='active'>
+                                <span className='glyphicon glyphicon-th-list'></span> Action Items
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to={ '/markDownEditor' } activeClassName='active'>
+                                <span className='glyphicon glyphicon-th-list'></span> Mark Down Editor
+                            </Link>
                         </li>
                     </ul>
                 </div>

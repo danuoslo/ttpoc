@@ -10,9 +10,16 @@
     color: white;
 }
 
+.navbar-inverse{
+    min-height:90px;
+}
+
+.nav > li > a {
+    display:inline;
+}
+
 /* Keep the nav menu independent of scrolling and on top of other items */
 .main-nav {
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -28,14 +35,9 @@
 
 @media (min-width: 768px) {
     /* On small screens, convert the nav menu to a vertical sidebar */
-    .main-nav {
-        height: 100%;
-        width: calc(25% - 20px);
-    }
-    .main-nav .navbar {
+    .main-nav .navbar { 
         border-radius: 0px;
         border-width: 0px;
-        height: 100%;
     }
     .main-nav .navbar-header {
         float: none;
@@ -48,6 +50,7 @@
         float: none;
     }
     .main-nav .navbar li {
+        display:inline;
         float: none;
         font-size: 15px;
         margin: 6px;
