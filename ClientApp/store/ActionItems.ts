@@ -5,6 +5,8 @@ import { Certification } from '../model/Certification';
 import { CertificationControlFamily } from '../model/CertificationControlFamily'
 
 enum ActionItemsActionTypes {
+    ASSIGN_TASK,
+    UNASSIGN_TASK,
     REQUEST_MSMANAGED,
     RECEIVE_MSMANAGED,
     REQUEST_CUSTOMERMANAGED,
@@ -23,6 +25,14 @@ export interface ActionItemsState {
 // -----------------
 // ACTIONS - These are serializable (hence replayable) descriptions of state transitions.
 // They do not themselves have any side-effects; they just describe something that is going to happen.
+
+interface AssignTask {
+    type: ActionItemsActionTypes.ASSIGN_TASK
+}
+
+interface UnassignTask {
+    type: ActionItemsActionTypes.UNASSIGN_TASK
+}
 
 interface RequestMsManaged {
     type: ActionItemsActionTypes.REQUEST_MSMANAGED

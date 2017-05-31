@@ -3,22 +3,22 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as ActionItemsState from '../store/ActionItems'
-import { ActionItemsComponent } from '../components/ActionItemsComponent'
+import { FrameworkDetailComponent } from '../components/FrameworkDetailComponent'
 
 // At runtime, Redux will merge together...
-type ActionItemsContainerProps =
-    ActionItemsState.ActionItemsState           // ... state we've requested from the Redux store
-    & typeof ActionItemsState.actionCreators;   // ... plus action creators we've requested
-                                                // ... plus incoming routing parameters if any
+type FrameworkDetailContainerProps =
+    ActionItemsState.ActionItemsState     // ... state we've requested from the Redux store
+    & typeof ActionItemsState.actionCreators   // ... plus action creators we've requested
+    & { params: { filter: string } };       // ... plus incoming routing parameters
 
-class ActionItemsContainer extends React.Component<ActionItemsContainerProps, void> {
+class FrameworkDetailContainer extends React.Component<FrameworkDetailContainerProps, void> {
     componentWillMount() {
         // This method runs when the component is first added to the page
         this.props.requestCustomerManaged();
         this.props.requestMsManaged();
     }
 
-    componentWillReceiveProps(nextProps: ActionItemsContainerProps) {
+    componentWillReceiveProps(nextProps: FrameworkDetailContainerProps) {
         // This method runs when incoming props (e.g., route params) change
         //this.props.requestCustomerManaged();
         //this.props.requestMsManaged();
@@ -28,7 +28,7 @@ class ActionItemsContainer extends React.Component<ActionItemsContainerProps, vo
         return <div>
             <h1>This will be the header of the page</h1>
             <p>For now this is empty.</p>
-            <ActionItemsComponent actionItems={null} customerManaged={this.props.customerControled} />
+            <FrameworkDetailComponent actionItems={null} customerManaged={this.props.customerControled} microsoftManaged={this.props.msCertificationControled} />
         </div>;
     }
 }
@@ -36,4 +36,4 @@ class ActionItemsContainer extends React.Component<ActionItemsContainerProps, vo
 export default connect(
     (state: ApplicationState) => state.actionItems, // Selects which state properties are merged into the component's props
     ActionItemsState.actionCreators                 // Selects which action creators are merged into the component's props
-)(ActionItemsContainer);
+)(FrameworkDetailContainer);

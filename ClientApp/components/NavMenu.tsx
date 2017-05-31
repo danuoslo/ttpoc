@@ -33,18 +33,18 @@ export class NavMenu extends React.Component<any, void> {
                             </Link>
                         </li>
                         <li>
-                            <Link to={ '/framworkdata' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Framwork data
-                            </Link>
-                        </li>
-                        <li>
                             <Link to={ '/actionItems' } activeClassName='active'>
                                 <span className='glyphicon glyphicon-th-list'></span> Action Items
                             </Link>
                         </li>
                         <li>
-                            <Link to={ '/markDownEditor' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Mark Down Editor
+                            <Link to={ '/frameworkDetails' } activeClassName='active'>
+                                <span className='glyphicon glyphicon-th-list'></span> Framework Details
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to={ '/test' } activeClassName='active'>
+                                <span className='glyphicon glyphicon-th-list'></span> Framework Details
                             </Link>
                         </li>
                     </ul>
