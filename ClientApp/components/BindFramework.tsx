@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FrameworkMarkupDetails} from '../model/FrameworkMarkupDetails';
-import {Datepicker} from './datepicker';
+import {DatepickerComponent} from './DatepickerComponent';
 
 interface BindComponentState {  
 }
@@ -47,7 +47,7 @@ export class BindComponent extends React.Component<BindingProperties, BindCompon
                               <option>Not in scope</option>            
                           </select>
                       </div>
-                    <div data-grid="col-3"><Datepicker /></div>
+                    <div data-grid="col-3"><DatepickerComponent /></div>
                     <div data-grid="col-4">{this.props.member.TestResult}</div>  
                   </div>          
               </div>

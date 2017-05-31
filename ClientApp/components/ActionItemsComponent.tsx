@@ -6,6 +6,8 @@ import { CertificationControlFamily } from '../model/CertificationControlFamily'
 import { Link } from "react-router";
 import { Persona, PersonaSize, PersonaPresence } from 'office-ui-fabric-react/lib/Persona';
 import { AssignTaskComponent } from "../components/AssignTaskComponent";
+import { CustomerImplementationPriority } from '../model/CustomerImplementationPriority';
+import {DatepickerComponent} from '../components/DatepickerComponent';
 
 declare var document:any;
 
@@ -14,6 +16,8 @@ interface ActionItemsComponentProps {
 
     customerManaged: CertificationControlFamily[]
 }
+
+
 
 export const examplePersona = {
   imageUrl: './images/persona-female.png',
@@ -67,7 +71,7 @@ export class ActionItemsComponent extends React.Component<ActionItemsComponentPr
             new GridColumn({
                 header: 'PRIORITY',
                 controlType: GridControlType.Text,
-                delegate: function () { return this.description[0].displayValue },
+                delegate: function () { return CustomerImplementationPriority[this.description[0].displayValue]; },
                 order: 6,
                 size: 2
             }),
@@ -81,7 +85,7 @@ export class ActionItemsComponent extends React.Component<ActionItemsComponentPr
             new GridColumn({
                 header: 'IMPLEMENTATION DATE',
                 controlType: GridControlType.Text,
-                delegate: function () { return this.testResultHistory[0].whenTested },
+                delegate: function () { return <span></span>/*<DatepickerComponent value={this.testResultHistory[0].whenTested } />*/ },
                 order: 8,
                 size: 1
             }),
