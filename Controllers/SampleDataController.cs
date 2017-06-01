@@ -47,25 +47,35 @@ namespace poc.Controllers
         {
             return new List<CertificationControlFamily>
                 {
-                    new CertificationControlFamily{
-                         Id = Guid.NewGuid(),
-                         CertificationId = Guid.NewGuid(),
-                         Number = "A.5.1",
-                         Title = new LocalizedValueList{  new LocalizedValue
+                    NewMethod(),
+                    NewMethod(),
+                    NewMethod(),
+                    NewMethod()
+                };
+        }
+
+        private static CertificationControlFamily NewMethod()
+        {
+            return new CertificationControlFamily
+            {
+                Id = Guid.NewGuid(),
+                CertificationId = Guid.NewGuid(),
+                Number = "A.5.1",
+                Title = new LocalizedValueList{  new LocalizedValue
                                                  {
                                                      CultureName = "en-US",
                                                      DisplayValue = "A.5.1 Office 365 - Management Direction for information Security",
                                                      SortValue = null
                                                  }
                          },
-                        Description = new LocalizedValueList{  new LocalizedValue
+                Description = new LocalizedValueList{  new LocalizedValue
                                                 {
                                                     CultureName = "en-US",
                                                     DisplayValue = "Understand how Office 365 management provides direction and support for information security in accordance with business requirements and relevant laws and regulations.",
                                                     SortValue = null
                                                 }
                         },
-                        CertificationControls = new List<CertificationControl> {
+                CertificationControls = new List<CertificationControl> {
                              new CertificationControl
                              {
                                  Id= Guid.NewGuid(),
@@ -80,15 +90,8 @@ namespace poc.Controllers
                                                                 "MA-0100",
                                                                 "MP-0100",
                                                                 "PS-0100",
-                                                                "PE-0100",
-                                                                "PM-0100",
-                                                                "RA-0100",
-                                                                "CA-0100",
-                                                                "PL-0100",
-                                                                "SC-0100",
-                                                                "SI-0100",
-                                                                "SA-0100",
-                                                                "AT-0100"},
+                                                                "PE-0100"
+                                                               },
                                 Title = new LocalizedValueList{  new LocalizedValue
                                                 {
                                                     CultureName = "en-US",
@@ -179,8 +182,7 @@ namespace poc.Controllers
                                 }
                              }
                          }
-                     }
-                };            
+            };
         }
 
         [HttpGet("[action]")]
@@ -188,25 +190,36 @@ namespace poc.Controllers
         {
             return new List<CertificationControlFamily>
                 {
-                    new CertificationControlFamily{
-                         Id = Guid.NewGuid(),
-                         CertificationId = Guid.NewGuid(),
-                         Number = "A.5.1",
-                         Title = new LocalizedValueList{  new LocalizedValue
+                    NewMethod1(),
+                    NewMethod1(),
+                    NewMethod1(),
+                    NewMethod1(),
+                    NewMethod1()
+            };
+        }
+
+        private static CertificationControlFamily NewMethod1()
+        {
+            return new CertificationControlFamily
+            {
+                Id = Guid.NewGuid(),
+                CertificationId = Guid.NewGuid(),
+                Number = "A.5.1",
+                Title = new LocalizedValueList{  new LocalizedValue
                                                  {
                                                      CultureName = "en-US",
                                                      DisplayValue = "A.5.1 Office 365 - Management Direction for information Security",
                                                      SortValue = null
                                                  }
                          },
-                        Description = new LocalizedValueList{  new LocalizedValue
+                Description = new LocalizedValueList{  new LocalizedValue
                                                 {
                                                     CultureName = "en-US",
                                                     DisplayValue = "Understand how Office 365 management provides direction and support for information security in accordance with business requirements and relevant laws and regulations.",
                                                     SortValue = null
                                                 }
                         },
-                        CertificationControls = new List<CertificationControl> {
+                CertificationControls = new List<CertificationControl> {
                              new CertificationControl
                              {
                                  Id= Guid.NewGuid(),
@@ -320,7 +333,6 @@ namespace poc.Controllers
                              }
                          }
                       }
-                }
             };
         }
     }

@@ -15,7 +15,6 @@ interface AssignTaskComponentState
     showAssignTask:boolean
 }
 
-
 export class AssignTaskComponent extends React.Component<AssignTaskComponentProps, AssignTaskComponentState>
 {
     constructor (props)
@@ -27,8 +26,8 @@ export class AssignTaskComponent extends React.Component<AssignTaskComponentProp
     {
         return  <span>
                     <div>
-                        {this.props.certificationAssignmentHistory.length > 0 ? 
-                            <Persona  />
+                        {this.props.certificationAssignmentHistory.length == 0 ?
+                            <Persona onClick={()=>this.setState({showAssignTask:true})}   />
                                 : <DefaultButton description='Assign' text='Assign' onClick={()=>this.setState({showAssignTask:true})}/>}
                     </div>
                     <Dialog containerClassName="reassignTaskDialog" isOpen={this.state.showAssignTask} onDismiss={() => this.setState({showAssignTask:false})} >

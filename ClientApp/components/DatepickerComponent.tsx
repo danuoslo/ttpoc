@@ -63,6 +63,6 @@ export class DatepickerComponent extends React.Component<IDatePickerProps, void>
     }
 
     public render() {
-        return <DatePicker {...this.props} strings={this.DayPickerStrings}  />
+        return <DatePicker {...this.props} strings={this.DayPickerStrings} isMonthPickerVisible={false} />
     }
 }

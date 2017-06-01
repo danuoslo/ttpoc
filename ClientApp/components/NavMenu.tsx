@@ -44,7 +44,7 @@ export class NavMenu extends React.Component<any, void> {
                         </li>
                         <li>
                             <Link to={ '/test' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Framework Details
+                                <span className='glyphicon glyphicon-th-list'></span> Test Component
                             </Link>
                         </li>
                     </ul>

@@ -7,27 +7,24 @@ import { Link } from "react-router";
 import { Persona, PersonaSize, PersonaPresence } from 'office-ui-fabric-react/lib/Persona';
 import { AssignTaskComponent } from "../components/AssignTaskComponent";
 import { CustomerImplementationPriority } from '../model/CustomerImplementationPriority';
-import {DatepickerComponent} from '../components/DatepickerComponent';
+import { DatepickerComponent } from '../components/DatepickerComponent';
+import { Pivot, PivotItem, PivotLinkFormat, PivotLinkSize } from 'office-ui-fabric-react/lib/Pivot';
 
-declare var document:any;
+declare var document: any;
 
 interface ActionItemsComponentProps {
     actionItems: Certification,
-
     customerManaged: CertificationControlFamily[]
 }
 
-
-
 export const examplePersona = {
-  imageUrl: './images/persona-female.png',
-  imageInitials: 'AL',
-  primaryText: 'Annie Lindqvist',
-  secondaryText: 'Software Engineer',
-  tertiaryText: 'In a meeting',
-  optionalText: 'Available at 4:00pm'
+    imageUrl: './images/persona-female.png',
+    imageInitials: 'AL',
+    primaryText: 'Annie Lindqvist',
+    secondaryText: 'Software Engineer',
+    tertiaryText: 'In a meeting',
+    optionalText: 'Available at 4:00pm'
 };
-
 
 export class ActionItemsComponent extends React.Component<ActionItemsComponentProps, void>
 {
@@ -43,14 +40,14 @@ export class ActionItemsComponent extends React.Component<ActionItemsComponentPr
             new GridColumn({
                 header: 'MS CONTROL',
                 controlType: GridControlType.Text,
-                delegate: function () { return this.cloudServiceControlNumbers.map((o,i) => <div key={i}>{o}</div>) },
+                delegate: function () { return this.cloudServiceControlNumbers.map((o, i) => <div key={i}>{o}</div>) },
                 order: 2,
                 size: 1
             }),
             new GridColumn({
                 header: 'NECESSARY CUSTOMER ACTIONS',
                 controlType: GridControlType.Text,
-                delegate: function () { return this.customerImplementationActionOverview[0].displayValue},
+                delegate: function () { return this.customerImplementationActionOverview[0].displayValue },
                 order: 3,
                 size: 2
             }),
@@ -58,13 +55,13 @@ export class ActionItemsComponent extends React.Component<ActionItemsComponentPr
                 header: 'ADDITIONAL GUIDANCE',
                 controlType: GridControlType.Text,
                 delegate: function () { return this.description[0].displayValue },
-                order: 2,
+                order: 4,
                 size: 2
             }),
             new GridColumn({
                 header: 'ASSIGNED TO',
                 controlType: GridControlType.Text,
-                delegate: function () { return <AssignTaskComponent certificationAssignmentHistory={[]} />},
+                delegate: function () { return <AssignTaskComponent certificationAssignmentHistory={[]} /> },
                 order: 5,
                 size: 1
             }),
@@ -83,14 +80,14 @@ export class ActionItemsComponent extends React.Component<ActionItemsComponentPr
                 size: 1
             }),
             new GridColumn({
-                header: 'IMPLEMENTATION DATE',
+                header: 'DATE IMPLEMENTED',
                 controlType: GridControlType.Text,
-                delegate: function () { return <span></span>/*<DatepickerComponent value={this.testResultHistory[0].whenTested } />*/ },
+                delegate: function () { return <DatepickerComponent value={new Date(this.testResultHistory[0].whenTested)} /> },
                 order: 8,
                 size: 1
             }),
             new GridColumn({
-                header: 'IMPLEMENTATION STATUS',
+                header: 'STATUS',
                 controlType: GridControlType.Text,
                 delegate: function () { return this.testResultHistory[0].displayValue },
                 order: 9,
@@ -101,51 +98,25 @@ export class ActionItemsComponent extends React.Component<ActionItemsComponentPr
 
     render() {
         return <div>
-            <div style={{width:"40%"}}>
-                <p style={{ marginLeft:"5%"}}>
-                    <span style={{color:"#999999"}}>
+            <div style={{ width: "40%" }}>
+                <p style={{ marginLeft: "5%" }}>
+                    <span style={{ color: "#999999" }}>
                         Action items are the customer managed controls which need to be implemented in order to reach compliance.
                          When the status of an action item is changed to implemented, the implementation notes, date and status are updated in the </span>
-                        <span style={{color:"#0099FF"}}>Review Frameworks</span>
-                        <span style={{color:"#999999"}}> dashboard where the auditor can proceed with testing. </span>
+                    <span style={{ color: "#0099FF" }}>Review Frameworks</span>
+                    <span style={{ color: "#999999" }}> dashboard where the auditor can proceed with testing. </span>
                 </p>
             </div>
-            Navigator 1
-            <nav className="c-link-navigation">
-                <ul>
-                    <li>
-                        <Link to={ '/actionItems/' } className="c-hyperlink">Azure</Link>
-                    </li>
-                    <li>
-                        <Link to={ '/actionItems/' } className="c-hyperlink">Dynamics 365</Link>
-                    </li>
-                    <li>
-                        <Link to={ '/actionItems/' } className="c-hyperlink">Office 365</Link>
-                    </li>
-                    <li>
-                        <Link to={ '/actionItems/' } className="c-hyperlink">All Action Items</Link>
-                    </li>
-                </ul>
-            </nav>
-            Example 1
-            <div>
-                <Link to={ '/actionItems/5' } className="FrameworkTypeMenu" tabIndex={0}>Azure</Link>
-                <Link to={ '/actionItems/6' } className="FrameworkTypeMenu" >Dynamics 365</Link>
-                <Link to={ '/actionItems/7' } className="FrameworkTypeMenu" >office 365</Link>
-                <Link to={ '/actionItems/8' } className="FrameworkTypeMenu" >All Action Itemss</Link>
-            </div>
-            <br/>
-            Example 2
             <div className="c-pivot">
                 <button className="c-flipper f-previous" role="tab" aria-hidden="true" tabIndex={-1}></button>
-                <div  role="tablist">
-                    <a className="f-active" aria-controls="menuControl" tabIndex={0}>Azure</a>
-                    <a role="tab" aria-controls="menuControl">Dynamics 365</a>
-                    <a role="tab" aria-controls="menuControl">office 365</a>
-                    <a role="tab" aria-controls="menuControl">All Action Items</a>
+                <div role="tablist">
+                    <a className="f-active" aria-controls="__ph1" tabIndex={0}>Azure</a>
+                    <a role="tab" aria-controls="__ph2">Dynamics 365</a>
+                    <a role="tab" aria-controls="__ph3">office 365</a>
+                    <a role="tab" aria-controls="__ph4">All Action Items</a>
                 </div>
                 <button className="c-flipper f-next" aria-hidden="true" tabIndex={-1}></button>
-                <section id="menuControl"></section>
+                <section id="__ph1" /><section id="__ph2"/><section id="__ph3"/><section id="__ph4"/>
             </div>
             <Collapsible trigger="Azure In-Scope Cloud Services for ISO-IEC 27001">
                 <p>This information is missing</p>

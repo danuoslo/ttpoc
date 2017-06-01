@@ -1,3 +1,7 @@
+body
+{
+    font-size: 15px;
+}
 .main-nav li .glyphicon {
     margin-right: 10px;
 }
@@ -132,4 +136,9 @@ a.FrameworkTypeMenu:visited
     min-height: 500px !important;
     width: 700px !important;
     height: 500px !important;
+}
+ .Collapsible__contentInner  [data-grid~=container] {
+     max-width: 100000000px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
